@@ -1,0 +1,9 @@
+.middle{
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+ul {
+    display: inline-block;
+    margin-left: -2%;
+}

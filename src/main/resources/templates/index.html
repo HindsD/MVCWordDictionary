@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head th:replace="fragments/frags :: head"></head>
+<link rel="stylesheet" th:href="@{/style.css}">
+<body>
+<div th:insert="fragments/frags :: header"></div>
+<div class="container middle">
+    <p>Or, pick one below!</p>
+    <ul>
+        <li th:each="item : ${words}">
+            <h3><a th:href="@{/{word}(word = ${item.word})}" th:text="${item.word}"></a></h3>
+        </li>
+    </ul>
+</div>
+
+<div th:replace="fragments/frags :: disclaimer"></div>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head th:replace="fragments/frags :: head"></head>
+<link rel="stylesheet" th:href="@{/style.css}">
+<body>
+<div th:insert="fragments/frags :: header"></div>
+<div class="content middle">
+    <form method="post"
+        th:action="@{definition}"
+          th:object="${word}">
+        <div>
+            <label for="wordSearch">
+                Enter a word to search
+            </label>
+            </br>
+            <input type="text" name="wordSearch" id="wordSearch" th:value="*{word}">
+        </div>
+        </br>
+        <button type="submit" value="Look up word">Look up word!</button>
+    </form>
+</div>
+<div class="container middle">
+    <h3>Words available in dictionary</h3>
+    <ul>
+        <li th:each="item: ${words}">
+            <h3 th:text="${item.word}">WORD</h3>
+        </li>
+    </ul>
+</div>
+<div th:replace="fragments/frags :: disclaimer"></div>
+</body>
+</html>

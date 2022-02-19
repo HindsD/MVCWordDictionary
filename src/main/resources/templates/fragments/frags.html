@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title th:text="${pageTitle}"></title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header th:fragment="header">
+    <h1 class="middle"><a th:href="@{/}">Word Dictionary</a></h1>
+    <h2 class="middle"><a th:href="@{/searchWord}">Search for a word!</a></h2>
+</header>
+<footer th:fragment="disclaimer" class="middle">
+     Not an actual Dictionary - Limited amount of words.
+</footer>
+</body>
+</html>
